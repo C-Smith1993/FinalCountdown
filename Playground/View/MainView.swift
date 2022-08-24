@@ -78,5 +78,13 @@ class MainView: UIViewController {
                     
         }
     }
+    
+    
+    @IBAction func doneBtnTapped(_ sender: Any) {
+        
+      //Hide the datePicker once done is tapped
+        datePicker.isHidden = true
+    }
+    
 }
 

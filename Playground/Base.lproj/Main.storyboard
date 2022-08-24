@@ -38,6 +38,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOm-h0-80m">
+                                <rect key="frame" x="329" y="541" width="64" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="DONE"/>
+                                <connections>
+                                    <action selector="doneBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j9n-1B-MZj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -45,6 +53,7 @@
                             <constraint firstItem="OKw-4k-Zqr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3Rp-Bt-mQW"/>
                             <constraint firstItem="J3l-bD-63o" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5Dg-dh-bGF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R9L-Z9-A8L" secondAttribute="trailing" constant="20" id="83y-MW-Ues"/>
+                            <constraint firstItem="DOm-h0-80m" firstAttribute="bottom" secondItem="J3l-bD-63o" secondAttribute="bottom" id="F29-bg-431"/>
                             <constraint firstItem="Iy9-K2-oWi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="GYB-EM-xes"/>
                             <constraint firstItem="Iy9-K2-oWi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Udq-uw-ZPo"/>
                             <constraint firstItem="J3l-bD-63o" firstAttribute="top" secondItem="Iy9-K2-oWi" secondAttribute="bottom" constant="20" id="ZIn-7c-HBi"/>
@@ -54,6 +63,7 @@
                             <constraint firstItem="J3l-bD-63o" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="jEd-1T-MsB"/>
                             <constraint firstItem="J3l-bD-63o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jMs-FV-b6Q"/>
                             <constraint firstItem="OKw-4k-Zqr" firstAttribute="top" secondItem="R9L-Z9-A8L" secondAttribute="bottom" constant="10" id="qR4-tC-pmK"/>
+                            <constraint firstItem="DOm-h0-80m" firstAttribute="trailing" secondItem="J3l-bD-63o" secondAttribute="trailing" id="sOZ-bb-ZlE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OKw-4k-Zqr" secondAttribute="trailing" constant="20" id="t5u-lg-EjM"/>
                         </constraints>
                     </view>
