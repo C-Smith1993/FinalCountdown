@@ -11,66 +11,59 @@
         <!--Main View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainView" customModule="Playground" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainView" customModule="Final_Countdown" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKw-4k-Zqr">
-                                <rect key="frame" x="20" y="831" width="374" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Change background"/>
-                                <connections>
-                                    <action selector="changeBackgroundTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2c3-JG-dN1"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Iy9-K2-oWi">
-                                <rect key="frame" x="20" y="74" width="374" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="J3l-bD-63o">
-                                <rect key="frame" x="0.0" y="154" width="414" height="448"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="505"/>
                             </datePicker>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter a colour to change the background..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R9L-Z9-A8L">
-                                <rect key="frame" x="20" y="787" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOm-h0-80m">
-                                <rect key="frame" x="329" y="541" width="64" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="DONE"/>
-                                <connections>
-                                    <action selector="doneBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j9n-1B-MZj"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1BL-DH-9Rg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter event title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VEi-6Q-gW9">
+                                        <rect key="frame" x="10" y="50" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tcg-PG-dNs">
+                                        <rect key="frame" x="10" y="104" width="394" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Create event"/>
+                                        <connections>
+                                            <action selector="createEventBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BHU-iy-F7E"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Tcg-PG-dNs" firstAttribute="leading" secondItem="1BL-DH-9Rg" secondAttribute="leading" constant="10" id="2h2-Gr-2AI"/>
+                                    <constraint firstItem="VEi-6Q-gW9" firstAttribute="leading" secondItem="1BL-DH-9Rg" secondAttribute="leading" constant="10" id="HrW-db-Tz5"/>
+                                    <constraint firstItem="Tcg-PG-dNs" firstAttribute="top" secondItem="VEi-6Q-gW9" secondAttribute="bottom" constant="20" id="W4H-1E-YaY"/>
+                                    <constraint firstItem="VEi-6Q-gW9" firstAttribute="top" secondItem="1BL-DH-9Rg" secondAttribute="top" constant="50" id="ZOm-Bt-DiC"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tcg-PG-dNs" secondAttribute="trailing" constant="10" id="poI-HV-nsH"/>
+                                    <constraint firstAttribute="trailing" secondItem="VEi-6Q-gW9" secondAttribute="trailing" constant="10" id="uFK-d2-srV"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="OKw-4k-Zqr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3Rp-Bt-mQW"/>
-                            <constraint firstItem="J3l-bD-63o" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5Dg-dh-bGF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R9L-Z9-A8L" secondAttribute="trailing" constant="20" id="83y-MW-Ues"/>
-                            <constraint firstItem="DOm-h0-80m" firstAttribute="bottom" secondItem="J3l-bD-63o" secondAttribute="bottom" id="F29-bg-431"/>
-                            <constraint firstItem="Iy9-K2-oWi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="GYB-EM-xes"/>
-                            <constraint firstItem="Iy9-K2-oWi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Udq-uw-ZPo"/>
-                            <constraint firstItem="J3l-bD-63o" firstAttribute="top" secondItem="Iy9-K2-oWi" secondAttribute="bottom" constant="20" id="ZIn-7c-HBi"/>
-                            <constraint firstItem="R9L-Z9-A8L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cCW-mD-P5A"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OKw-4k-Zqr" secondAttribute="bottom" id="cG2-ra-d11"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Iy9-K2-oWi" secondAttribute="trailing" constant="20" id="cKm-06-gcY"/>
-                            <constraint firstItem="J3l-bD-63o" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="jEd-1T-MsB"/>
-                            <constraint firstItem="J3l-bD-63o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jMs-FV-b6Q"/>
-                            <constraint firstItem="OKw-4k-Zqr" firstAttribute="top" secondItem="R9L-Z9-A8L" secondAttribute="bottom" constant="10" id="qR4-tC-pmK"/>
-                            <constraint firstItem="DOm-h0-80m" firstAttribute="trailing" secondItem="J3l-bD-63o" secondAttribute="trailing" id="sOZ-bb-ZlE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OKw-4k-Zqr" secondAttribute="trailing" constant="20" id="t5u-lg-EjM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1BL-DH-9Rg" secondAttribute="trailing" id="21C-wU-1Ri"/>
+                            <constraint firstItem="J3l-bD-63o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Awm-kc-Iq3"/>
+                            <constraint firstItem="1BL-DH-9Rg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Cx0-SO-Tir"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J3l-bD-63o" secondAttribute="trailing" id="FAo-eR-qxF"/>
+                            <constraint firstItem="1BL-DH-9Rg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KFE-VD-Ox1"/>
+                            <constraint firstItem="J3l-bD-63o" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="m2Z-XE-ujf"/>
+                            <constraint firstItem="J3l-bD-63o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="m4H-gE-99W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1BL-DH-9Rg" secondAttribute="bottom" id="xQh-j0-WAS"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="QoR-Il-R0O"/>
                     <connections>
-                        <outlet property="colourTxtField" destination="R9L-Z9-A8L" id="eHo-pS-OpC"/>
                         <outlet property="datePicker" destination="J3l-bD-63o" id="iPE-QL-YbE"/>
-                        <outlet property="timeLbl" destination="Iy9-K2-oWi" id="MMa-rx-RwR"/>
+                        <outlet property="overView" destination="1BL-DH-9Rg" id="5Ua-rj-Ngh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -80,7 +73,7 @@
         <!--Event ListVC-->
         <scene sceneID="SjZ-8Z-Rvw">
             <objects>
-                <viewController id="wfa-Cd-ypa" customClass="EventListVC" customModule="Playground" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wfa-Cd-ypa" customClass="EventListVC" customModule="Final_Countdown" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sBU-Kj-PfA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,6 +93,9 @@
                                         <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system">
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="eqh-SO-j32"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.019607843140000001" green="0.23921568630000001" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -170,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzt-u0-l3U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905.79710144927549" y="-56.25"/>
+            <point key="canvasLocation" x="846" y="54"/>
         </scene>
     </scenes>
     <resources>

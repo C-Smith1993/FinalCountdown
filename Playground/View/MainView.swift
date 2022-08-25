@@ -16,8 +16,7 @@ class MainView: UIViewController {
     
   //MARK: - IBOutlets
     @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var colourTxtField: UITextField!
-    @IBOutlet weak var timeLbl: UILabel!
+    @IBOutlet weak var overView: UIView! //This view is displayed over the top of the datePicker
     
     
     override func viewDidLoad() {
@@ -58,9 +57,15 @@ class MainView: UIViewController {
     
   //MARK: - IBActions
     
-    @IBAction func changeBackgroundTapped(_ sender: Any) {
+    @IBAction func createEventBtnTapped(_ sender: Any) {
+      //Dismiss the overView so that we can see the datePicker
+        overView.isHidden = true
+    }
+    
         
-        let colourTextFieldTxt = colourTxtField.text!
+      /* Use this inside a function if you'd like to change the background colour
+       
+       let colourTextFieldTxt = colourTxtField.text!
         
         let someColour = colourTextFieldTxt
         switch someColour {
@@ -77,14 +82,7 @@ class MainView: UIViewController {
             self.functions.customAlert(title: "Error", message: "Change Colour")
                     
         }
-    }
-    
-    
-    @IBAction func doneBtnTapped(_ sender: Any) {
-        
-      //Hide the datePicker once done is tapped
-        datePicker.isHidden = true
-    }
+    }*/
     
 }
 
