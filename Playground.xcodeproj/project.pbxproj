@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1703852A28A51F2D00D968AD /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1703852928A51F2D00D968AD /* Functions.swift */; };
+		172705A228B7A86A00E9B11A /* EventListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172705A128B7A86A00E9B11A /* EventListVC.swift */; };
 		1768F7E928A2AE1B00AB8795 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768F7E828A2AE1B00AB8795 /* AppDelegate.swift */; };
 		1768F7EB28A2AE1B00AB8795 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768F7EA28A2AE1B00AB8795 /* SceneDelegate.swift */; };
 		1768F7ED28A2AE1B00AB8795 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768F7EC28A2AE1B00AB8795 /* MainView.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		1703852928A51F2D00D968AD /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		172705A128B7A86A00E9B11A /* EventListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListVC.swift; sourceTree = "<group>"; };
 		1768F7E528A2AE1B00AB8795 /* Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1768F7E828A2AE1B00AB8795 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1768F7EA28A2AE1B00AB8795 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				1768F7EC28A2AE1B00AB8795 /* MainView.swift */,
+				172705A128B7A86A00E9B11A /* EventListVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				1768F7E928A2AE1B00AB8795 /* AppDelegate.swift in Sources */,
 				1768F7EB28A2AE1B00AB8795 /* SceneDelegate.swift in Sources */,
 				1703852A28A51F2D00D968AD /* Functions.swift in Sources */,
+				172705A228B7A86A00E9B11A /* EventListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
