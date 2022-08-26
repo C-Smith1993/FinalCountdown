@@ -17,53 +17,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="J3l-bD-63o">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="505"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="421"/>
                             </datePicker>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1BL-DH-9Rg">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter event title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VEi-6Q-gW9">
-                                        <rect key="frame" x="10" y="50" width="394" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tcg-PG-dNs">
-                                        <rect key="frame" x="10" y="104" width="394" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Create event"/>
-                                        <connections>
-                                            <action selector="createEventBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BHU-iy-F7E"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="Tcg-PG-dNs" firstAttribute="leading" secondItem="1BL-DH-9Rg" secondAttribute="leading" constant="10" id="2h2-Gr-2AI"/>
-                                    <constraint firstItem="VEi-6Q-gW9" firstAttribute="leading" secondItem="1BL-DH-9Rg" secondAttribute="leading" constant="10" id="HrW-db-Tz5"/>
-                                    <constraint firstItem="Tcg-PG-dNs" firstAttribute="top" secondItem="VEi-6Q-gW9" secondAttribute="bottom" constant="20" id="W4H-1E-YaY"/>
-                                    <constraint firstItem="VEi-6Q-gW9" firstAttribute="top" secondItem="1BL-DH-9Rg" secondAttribute="top" constant="50" id="ZOm-Bt-DiC"/>
-                                    <constraint firstAttribute="trailing" secondItem="Tcg-PG-dNs" secondAttribute="trailing" constant="10" id="poI-HV-nsH"/>
-                                    <constraint firstAttribute="trailing" secondItem="VEi-6Q-gW9" secondAttribute="trailing" constant="10" id="uFK-d2-srV"/>
-                                </constraints>
-                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter an event title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VPc-NT-TEt">
+                                <rect key="frame" x="20" y="10" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjV-AC-uE8">
+                                <rect key="frame" x="153.5" y="505" width="107" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Create event"/>
+                                <connections>
+                                    <action selector="createEventBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zmr-xW-6li"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1BL-DH-9Rg" secondAttribute="trailing" id="21C-wU-1Ri"/>
+                            <constraint firstItem="KjV-AC-uE8" firstAttribute="top" secondItem="J3l-bD-63o" secondAttribute="bottom" constant="20" id="9cd-BC-fpu"/>
                             <constraint firstItem="J3l-bD-63o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Awm-kc-Iq3"/>
-                            <constraint firstItem="1BL-DH-9Rg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Cx0-SO-Tir"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J3l-bD-63o" secondAttribute="trailing" id="FAo-eR-qxF"/>
-                            <constraint firstItem="1BL-DH-9Rg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KFE-VD-Ox1"/>
-                            <constraint firstItem="J3l-bD-63o" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="m2Z-XE-ujf"/>
-                            <constraint firstItem="J3l-bD-63o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="m4H-gE-99W"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1BL-DH-9Rg" secondAttribute="bottom" id="xQh-j0-WAS"/>
+                            <constraint firstItem="J3l-bD-63o" firstAttribute="top" secondItem="VPc-NT-TEt" secondAttribute="bottom" constant="20" id="Mac-nf-9Rf"/>
+                            <constraint firstItem="VPc-NT-TEt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ty7-df-eY8"/>
+                            <constraint firstItem="KjV-AC-uE8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zj9-P9-kCa"/>
+                            <constraint firstItem="VPc-NT-TEt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="dck-KI-x2Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VPc-NT-TEt" secondAttribute="trailing" constant="20" id="k8m-HN-QJl"/>
+                            <constraint firstItem="J3l-bD-63o" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="m2Z-XE-ujf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QoR-Il-R0O"/>
                     <connections>
                         <outlet property="datePicker" destination="J3l-bD-63o" id="iPE-QL-YbE"/>
-                        <outlet property="overView" destination="1BL-DH-9Rg" id="5Ua-rj-Ngh"/>
+                        <outlet property="eventTxtField" destination="VPc-NT-TEt" id="ejO-dO-Fa6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

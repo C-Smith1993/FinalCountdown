@@ -16,7 +16,7 @@ class MainView: UIViewController {
     
   //MARK: - IBOutlets
     @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var overView: UIView! //This view is displayed over the top of the datePicker
+    @IBOutlet weak var eventTxtField: UITextField!
     
     
     override func viewDidLoad() {
@@ -58,11 +58,16 @@ class MainView: UIViewController {
   //MARK: - IBActions
     
     @IBAction func createEventBtnTapped(_ sender: Any) {
-      //Dismiss the overView so that we can see the datePicker
-        overView.isHidden = true
+        let eventListVC = EventListVC()
+        
+        eventListVC.eventTitle = eventTxtField.text!
+        
+     // Pass Data
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "eventDetails"), object: nil, userInfo: ["eventTitle": eventTxtField.text!])
+        
+        dismiss(animated: true, completion: nil)
     }
     
-        
       /* Use this inside a function if you'd like to change the background colour
        
        let colourTextFieldTxt = colourTxtField.text!

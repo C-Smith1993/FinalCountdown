@@ -9,6 +9,8 @@ import UIKit
 
 class EventListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var eventTitle = ""
+    
     struct Event{
         var title: String
         var days: String
@@ -18,7 +20,6 @@ class EventListVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,17 @@ class EventListVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         print(eventsArray)
         
         tableView.reloadData()
+        
+      //This will listen for a newly created event in the other VC
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "eventDetails"), object: nil, queue: nil, using:catchNotification)
+    }
+    
+    
+  //This will run once a notification has been received from the other VC
+    func catchNotification(notification:Notification) -> Void {
+      guard let event = notification.userInfo!["eventTitle"] else { return }
+
+      print("The event has been passed: \(event)")
     }
 
     
