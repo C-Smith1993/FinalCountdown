@@ -7,11 +7,25 @@
 
 import UIKit
 
-class MainView: UIViewController {
+class DateTimeSelectorVC: UIViewController {
     
-  //MARK: - Constants and variables
+    
+    
+//MARK: - Constants, variables & structs
   //Holds reference to the Functions class
     let functions = Functions()
+    
+  //Hold a reference to the EventListVC
+    let eventListVC = EventListVC()
+    
+  //Hold these here, so they can be passed through to the EventListVC
+    var eventTitle = String()
+    var hour = Int()
+    var minute = Int()
+    var month = Int()
+    var year = Int()
+    var day = Int()
+    
     
     
   //MARK: - IBOutlets
@@ -26,7 +40,7 @@ class MainView: UIViewController {
         datePicker.preferredDatePickerStyle = .inline
         
       //Each time a new date and time is selected from the picker, the handler function will run
-        datePicker.addTarget(self, action: #selector(MainView.handler(sender:)), for: UIControl.Event.valueChanged)
+        datePicker.addTarget(self, action: #selector(DateTimeSelectorVC.handler(sender:)), for: UIControl.Event.valueChanged)
     }
     
     
@@ -38,32 +52,25 @@ class MainView: UIViewController {
         let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
             
-        //Get the specific elements, such as: hour, min, month, year, day from the datePicker
+        //Get the specific elements, such as: hour, min, month, year, day from the datePicker, then update the variables. These can be passed through to the EventListVC later on.
             let dateComponents = Calendar.current.dateComponents([.hour, .minute, .month, .year, .day], from: datePicker.date)
-            let hour = dateComponents.hour
-            let minute = dateComponents.minute
-            let month = dateComponents.month
-            let year = dateComponents.year
-            let day = dateComponents.day
+            hour = dateComponents.hour!
+            minute = dateComponents.minute!
+            month = dateComponents.month!
+            year = dateComponents.year!
+            day = dateComponents.day!
             
-         //Print the selected datePicker components
-            print("hour: \(hour!), min: \(minute!), month \(month!), year: \(year!), day: \(day!)" )
-            
-         //Now, let's work out the difference between today's date and the date selected in datePicker
-         //When this function runs, the time difference will be printed
-            functions.updateTimeDifference(compYear: year!, compMonth: month!, compDay: day!, compHour: hour!, compMin: minute!)
+            eventTitle = eventTxtField.text!
     }
 
+    
     
   //MARK: - IBActions
     
     @IBAction func createEventBtnTapped(_ sender: Any) {
-        let eventListVC = EventListVC()
-        
-        eventListVC.eventTitle = eventTxtField.text!
         
      // Pass Data
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "eventDetails"), object: nil, userInfo: ["eventTitle": eventTxtField.text!])
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "eventDetails"), object: nil, userInfo: ["eventTitle": eventTitle, "hour" : hour, "min" : minute, "month" : month, "year" : year, "day" : day])
         
         dismiss(animated: true, completion: nil)
     }
