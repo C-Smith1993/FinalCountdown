@@ -9,6 +9,13 @@ import UIKit
 
 class Functions : UIViewController{
     
+    struct Event{
+        let eventTitle : String
+        let daysLeft : Int
+        let hoursLeft : Int
+        let minutesLeft : Int
+    }
+    
 //MARK: - CustomAlert
     func customAlert(title: String, message: String){
         // create the alert
@@ -57,16 +64,17 @@ class Functions : UIViewController{
         
             let eventTitle = titleOfEvent
 
-            print("day:", daysLeft ?? "N/A", "hour:", hoursLeft ?? "N/A", "minute:", minutesLeft ?? "N/A")
+          //  print("day:", daysLeft ?? "N/A", "hour:", hoursLeft ?? "N/A", "minute:", minutesLeft ?? "N/A")
 
             //Set countdown label text
-            let timeString = "\(daysLeft ?? 0) Days, \(hoursLeft ?? 0) Hours, \(minutesLeft ?? 0) Minutes"
-            print(timeString)
+          //  let timeString = "\(daysLeft ?? 0) Days, \(hoursLeft ?? 0) Hours, \(minutesLeft ?? 0) Minutes"
+            //print(timeString)
         
-            print("titleOfEvent is: \(eventTitle)")
+            //print("titleOfEvent is: \(eventTitle)")
         
         //This is where we would need to save the event
+        let timeToEvent = Event.init(eventTitle: eventTitle, daysLeft: daysLeft ?? 0, hoursLeft: hoursLeft ?? 0, minutesLeft: minutesLeft ?? 0)
         
-        
+        print("This is the time to event: \(timeToEvent)")
         }
 }
