@@ -51,7 +51,7 @@ class EventListVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                                 print("These were selected using the datePicker: eventTitle: \(event), hour: \(hr), minute: \(min), month: \(month), year: \(year), day: \(day)")
                                 
                                 //Now work out the difference between the current date and selected date
-                                functions.updateTimeDifference(compYear: year, compMonth: month, compDay: day, compHour: hr, compMin: min)
+                                functions.updateTimeDifference(titleOfEvent: event, compYear: year, compMonth: month, compDay: day, compHour: hr, compMin: min)
                             }
                          }
                       }

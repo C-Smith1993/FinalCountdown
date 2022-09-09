@@ -25,7 +25,7 @@ class Functions : UIViewController{
     //MARK: - For date countdown
         
        //Parameters can be removed if needed
-    func updateTimeDifference(compYear: Int, compMonth: Int, compDay: Int, compHour: Int, compMin: Int){
+    func updateTimeDifference(titleOfEvent: String, compYear: Int, compMonth: Int, compDay: Int, compHour: Int, compMin: Int){
         // Here we set the current date
 
             let date = NSDate()
@@ -54,11 +54,19 @@ class Functions : UIViewController{
             let daysLeft = CompetitionDayDifference.day
             let hoursLeft = CompetitionDayDifference.hour
             let minutesLeft = CompetitionDayDifference.minute
+        
+            let eventTitle = titleOfEvent
 
             print("day:", daysLeft ?? "N/A", "hour:", hoursLeft ?? "N/A", "minute:", minutesLeft ?? "N/A")
 
             //Set countdown label text
             let timeString = "\(daysLeft ?? 0) Days, \(hoursLeft ?? 0) Hours, \(minutesLeft ?? 0) Minutes"
             print(timeString)
+        
+            print("titleOfEvent is: \(eventTitle)")
+        
+        //This is where we would need to save the event
+        
+        
         }
 }
