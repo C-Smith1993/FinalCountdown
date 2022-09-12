@@ -6,16 +6,20 @@
 //
 
 import UIKit
+import CoreData
 
 class EventListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let functions = Functions()
     
+    //An event may or may not exist. If it does, save it here
+    var events : [EventModel] = []
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     //Create a date model
     struct EventModel{
         var eventTitle : String
-        var year : Int
-        var month : Int
         var day : Int
         var hour : Int
         var minute : Int
@@ -32,11 +36,38 @@ class EventListVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Load the saved data using CoreData
+        fetchData()
+        
       //This will listen for a newly created event in the other datePicker VC
       //Once there is a new update, the catchNotification function will run
       //We want to obtain the year, month, day, hour, minute
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "eventDetails"), object: nil, queue: nil, using:catchNotification)
     }
+    
+    func fetchData(){
+        print("Fetching Data...")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Event")
+        request.returnsObjectsAsFaults = false
+        do{
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject]{
+                let eventName = data.value(forKey: "name") as! String
+                let days = data.value(forKey: "days") as! Int
+                let hours = data.value(forKey: "hours") as! Int
+                let minutes = data.value(forKey: "minutes") as! Int
+                print("Time to \(eventName): days = \(days), hours = \(hours), minutes = \(minutes)")
+                
+               //Adds all events
+                let event = EventModel.init(eventTitle: eventName, day: days, hour: hours, minute: minutes)
+                
+                print("This is event1: \(event)")
+                
+            }
+            }catch{
+                print("Fetching data failed")
+            }
+        }
     
     
   //This will run once a notification has been received from the other VC

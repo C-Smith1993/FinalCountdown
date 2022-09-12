@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1703852A28A51F2D00D968AD /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1703852928A51F2D00D968AD /* Functions.swift */; };
 		172705A228B7A86A00E9B11A /* EventListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172705A128B7A86A00E9B11A /* EventListVC.swift */; };
+		1745655E28CC9F0F008B1CC0 /* Event.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1745655C28CC9F0F008B1CC0 /* Event.xcdatamodeld */; };
 		1768F7E928A2AE1B00AB8795 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768F7E828A2AE1B00AB8795 /* AppDelegate.swift */; };
 		1768F7EB28A2AE1B00AB8795 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768F7EA28A2AE1B00AB8795 /* SceneDelegate.swift */; };
 		1768F7ED28A2AE1B00AB8795 /* DateTimeSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768F7EC28A2AE1B00AB8795 /* DateTimeSelectorVC.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		1703852928A51F2D00D968AD /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		172705A128B7A86A00E9B11A /* EventListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListVC.swift; sourceTree = "<group>"; };
+		1745655D28CC9F0F008B1CC0 /* Event.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Event.xcdatamodel; sourceTree = "<group>"; };
 		1768F7E528A2AE1B00AB8795 /* Final Countdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Final Countdown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1768F7E828A2AE1B00AB8795 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1768F7EA28A2AE1B00AB8795 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				1768F7F128A2AE1D00AB8795 /* Assets.xcassets */,
 				1768F7F328A2AE1D00AB8795 /* LaunchScreen.storyboard */,
 				1768F7F628A2AE1D00AB8795 /* Info.plist */,
+				1745655C28CC9F0F008B1CC0 /* Event.xcdatamodeld */,
 			);
 			path = Playground;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				1768F7E928A2AE1B00AB8795 /* AppDelegate.swift in Sources */,
 				1768F7EB28A2AE1B00AB8795 /* SceneDelegate.swift in Sources */,
 				1703852A28A51F2D00D968AD /* Functions.swift in Sources */,
+				1745655E28CC9F0F008B1CC0 /* Event.xcdatamodeld in Sources */,
 				172705A228B7A86A00E9B11A /* EventListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,6 +662,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1745655C28CC9F0F008B1CC0 /* Event.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1745655D28CC9F0F008B1CC0 /* Event.xcdatamodel */,
+			);
+			currentVersion = 1745655D28CC9F0F008B1CC0 /* Event.xcdatamodel */;
+			path = Event.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1768F7DD28A2AE1A00AB8795 /* Project object */;
 }

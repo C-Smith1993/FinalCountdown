@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 class Functions : UIViewController{
     
-    struct Event{
+    struct EventStruct{
         let eventTitle : String
         let daysLeft : Int
         let hoursLeft : Int
@@ -73,8 +74,34 @@ class Functions : UIViewController{
             //print("titleOfEvent is: \(eventTitle)")
         
         //This is where we would need to save the event
-        let timeToEvent = Event.init(eventTitle: eventTitle, daysLeft: daysLeft ?? 0, hoursLeft: hoursLeft ?? 0, minutesLeft: minutesLeft ?? 0)
+        let timeToEvent = EventStruct.init(eventTitle: eventTitle, daysLeft: daysLeft ?? 0, hoursLeft: hoursLeft ?? 0, minutesLeft: minutesLeft ?? 0)
         
         print("This is the time to event: \(timeToEvent)")
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        //This is how we will interact with the CoreData stack
+        let newEvent = Event(context: context)
+        
+        //Update the entity attributes
+        newEvent.name = eventTitle
+        
+        let daysToInt64 = Int64(daysLeft!)
+        newEvent.days = daysToInt64
+        
+        let hoursToInt64 = Int64(hoursLeft!)
+        newEvent.hours = hoursToInt64
+        
+        let minutesToInt64 = Int64(minutesLeft!)
+        newEvent.minutes = minutesToInt64
+        
+        
+        //Attempt to save the data
+        do {
+            try context.save()
+            
+        }catch{
+            print("Storing data Failed")
+             }
         }
 }
