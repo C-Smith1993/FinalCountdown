@@ -19,6 +19,7 @@
 		1768F80028A2AE1E00AB8795 /* PlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768F7FF28A2AE1E00AB8795 /* PlaygroundTests.swift */; };
 		1768F80A28A2AE1E00AB8795 /* PlaygroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768F80928A2AE1E00AB8795 /* PlaygroundUITests.swift */; };
 		1768F80C28A2AE1E00AB8795 /* PlaygroundUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1768F80B28A2AE1E00AB8795 /* PlaygroundUITestsLaunchTests.swift */; };
+		177843A228D0C01800F07E35 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177843A128D0C01800F07E35 /* Structs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		1768F80528A2AE1E00AB8795 /* Final CountdownUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Final CountdownUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1768F80928A2AE1E00AB8795 /* PlaygroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundUITests.swift; sourceTree = "<group>"; };
 		1768F80B28A2AE1E00AB8795 /* PlaygroundUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		177843A128D0C01800F07E35 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +103,6 @@
 		1703852828A51E8800D968AD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1703852928A51F2D00D968AD /* Functions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -129,6 +130,7 @@
 		1768F7E728A2AE1B00AB8795 /* Playground */ = {
 			isa = PBXGroup;
 			children = (
+				177843A028D0BFFB00F07E35 /* Extensions */,
 				1703852828A51E8800D968AD /* Model */,
 				1703852728A51E8200D968AD /* View */,
 				1703852628A51E7700D968AD /* Controller  */,
@@ -158,6 +160,15 @@
 				1768F80B28A2AE1E00AB8795 /* PlaygroundUITestsLaunchTests.swift */,
 			);
 			path = PlaygroundUITests;
+			sourceTree = "<group>";
+		};
+		177843A028D0BFFB00F07E35 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1703852928A51F2D00D968AD /* Functions.swift */,
+				177843A128D0C01800F07E35 /* Structs.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +305,7 @@
 				1768F7ED28A2AE1B00AB8795 /* DateTimeSelectorVC.swift in Sources */,
 				1768F7E928A2AE1B00AB8795 /* AppDelegate.swift in Sources */,
 				1768F7EB28A2AE1B00AB8795 /* SceneDelegate.swift in Sources */,
+				177843A228D0C01800F07E35 /* Structs.swift in Sources */,
 				1703852A28A51F2D00D968AD /* Functions.swift in Sources */,
 				1745655E28CC9F0F008B1CC0 /* Event.xcdatamodeld in Sources */,
 				172705A228B7A86A00E9B11A /* EventListVC.swift in Sources */,

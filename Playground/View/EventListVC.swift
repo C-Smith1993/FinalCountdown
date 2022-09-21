@@ -10,23 +10,25 @@ import CoreData
 
 class EventListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //Used to store variables of different data types
+    struct MyEvent{
+        var name : String
+        var days : Int64
+        var mins : Int64
+        var hours : Int64
+    }
+     
+    //Access to the Functions class
     let functions = Functions()
     
-    //An event may or may not exist. If it does, save it here
-    var events : [EventModel] = []
+    //Holds an array of events once they've been fetched using CoreData
+    var eventsArray : [MyEvent] = []
     
+    //Allows us to make changes to managed objects (Event). We can track, update and save changes
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    //Create a date model
-    struct EventModel{
-        var eventTitle : String
-        var day : Int
-        var hour : Int
-        var minute : Int
-    }
-    
     //The selected info in date picker before time difference worked out
-    var selectedDatePickerInfo : EventModel?
+    var selectedDatePickerInfo : EventStructs.DateTimeSelected?
     
     
     
@@ -35,6 +37,9 @@ class EventListVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         //Load the saved data using CoreData
         fetchData()
@@ -51,19 +56,25 @@ class EventListVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         request.returnsObjectsAsFaults = false
         do{
             let result = try context.fetch(request)
+            
             for data in result as! [NSManagedObject]{
                 let eventName = data.value(forKey: "name") as! String
-                let days = data.value(forKey: "days") as! Int
-                let hours = data.value(forKey: "hours") as! Int
-                let minutes = data.value(forKey: "minutes") as! Int
-                print("Time to \(eventName): days = \(days), hours = \(hours), minutes = \(minutes)")
+                let days = data.value(forKey: "days") as! Int64
+                let minutes = data.value(forKey: "minutes") as! Int64
+                let hours = data.value(forKey: "hours") as! Int64
                 
-               //Adds all events
-                let event = EventModel.init(eventTitle: eventName, day: days, hour: hours, minute: minutes)
+                let fetchedEvent = ("name: \(eventName), days: \(days), mins: \(minutes), hours: \(hours)")
                 
-                print("This is event1: \(event)")
+                print("This is the fetched event: \(fetchedEvent)")
                 
+                eventsArray.append(MyEvent.init(name: eventName, days: days, mins: minutes, hours: hours))
+                
+                print("This is my eventsArray: \(eventsArray)")
+                
+                //This is probably a good time to update the tableview
+                tableView.reloadData()
             }
+            
             }catch{
                 print("Fetching data failed")
             }
@@ -99,16 +110,16 @@ class EventListVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         //title is tag 1
         let titleLabel = eventCell.viewWithTag(1) as! UILabel
-        titleLabel.text = ""
+        titleLabel.text = eventsArray[indexPath.row].name
         
         //days is tag 2
-        let daysLabel = eventCell.viewWithTag(2) as! UILabel
-        daysLabel.text = ""
+        let timeRemainingLabel = eventCell.viewWithTag(2) as! UILabel
+        timeRemainingLabel.text = ("\(eventsArray[indexPath.row].days)  days: \(eventsArray[indexPath.row].hours)  hours: \(eventsArray[indexPath.row].mins)  minutes")
         
         return eventCell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return eventsArray.count
     }
 }
