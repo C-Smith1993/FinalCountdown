@@ -10,7 +10,8 @@ import CoreData
 
 class EventListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    //Used to store variables of different data types
+    
+  //Used to store variables of different data types
     struct MyEvent{
         var name : String
         var days : Int64
@@ -18,30 +19,38 @@ class EventListVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         var hours : Int64
     }
      
-    //Access to the Functions class
+    
+  //Access to the Functions class
     let functions = Functions()
     
-    //Holds an array of events once they've been fetched using CoreData
+    
+  //Array of events from CoreData
     var eventsArray : [MyEvent] = []
     
-    //Allows us to make changes to managed objects (Event). We can track, update and save changes
+    
+  //Allows us to make changes to managed objects (Event). We can track, update and save changes
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    //The selected info in date picker before time difference worked out
+    
+  //The selected info in date picker before time difference worked out
     var selectedDatePickerInfo : EventStructs.DateTimeSelected?
     
     
     
-    //MARK: - IBOutlets
+//MARK: - IBOutlets
+    
+    
     @IBOutlet weak var tableView: UITableView!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+      //Set this class as the tableView delegate and data source
         tableView.delegate = self
         tableView.dataSource = self
         
-        //Load the saved data using CoreData
+      //Load the saved data using CoreData
         fetchData()
         
       //This will listen for a newly created event in the other datePicker VC
@@ -49,6 +58,8 @@ class EventListVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
       //We want to obtain the year, month, day, hour, minute
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "eventDetails"), object: nil, queue: nil, using:catchNotification)
     }
+    
+    
     
     func fetchData(){
         print("Fetching Data...")
@@ -63,15 +74,10 @@ class EventListVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 let minutes = data.value(forKey: "minutes") as! Int64
                 let hours = data.value(forKey: "hours") as! Int64
                 
-                let fetchedEvent = ("name: \(eventName), days: \(days), mins: \(minutes), hours: \(hours)")
-                
-                print("This is the fetched event: \(fetchedEvent)")
-                
+                //Add each event to the array
                 eventsArray.append(MyEvent.init(name: eventName, days: days, mins: minutes, hours: hours))
                 
-                print("This is my eventsArray: \(eventsArray)")
-                
-                //This is probably a good time to update the tableview
+                //Reload the tableView with the new data
                 tableView.reloadData()
             }
             
@@ -79,6 +85,7 @@ class EventListVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 print("Fetching data failed")
             }
         }
+    
     
     
   //This will run once a notification has been received from the other VC
